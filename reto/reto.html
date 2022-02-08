@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Calculadora de altura triángulo isósceles</h1>
+    <form action="">
+        <label for="">Ingrese lado A</label>
+        <input id="inputLadoA" type="number">
+        <label for="">Ingrese lado B</label>
+        <input id="inputLadoB" type="number">
+        <label for="">Ingrese Base</label>
+        <input id="inputladoC" type="number">
+        <button type="button" onclick="irACalcular()">Calcular Altura</button>
+    </form>
+</body>
+<script>
+
+    function verificarLados(A,B) {
+        if (A != B) {
+            return false
+        }
+        else{
+            return true
+        }
+    }
+
+    function calculadora(A,B,base){
+        b = base/2
+        c = B
+        a = Math.sqrt((c*c)-(b*b))
+        return a
+    }
+
+    function irACalcular() {
+
+        let A = document.getElementById('inputLadoA').value
+        let B = document.getElementById('inputLadoB').value
+        let base = document.getElementById('inputladoC').value
+
+        if(verificarLados(A,B)){
+            alert(`La altura de tu triangulo es: ${calculadora(A,B,base)}`)
+        }
+        else{
+            alert("Los lados A y B deben ser iguales")
+        }
+    }
+
+</script>
+</html>
